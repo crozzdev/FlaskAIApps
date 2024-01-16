@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="/SentimentAnalyzer/analyze" method="post">
+    <label for="text">Enter text to analyze:</label><br>
+    <textarea id="text" name="text" rows="4" cols="50"></textarea><br>
+    <input type="submit" value="Analyze">
+</form>
+
+<div id="response"></div>
+{% if sentiment %}
+    <h3>Sentiment:</h3>
+    <p>{{ sentiment }}</p>
+{% endif %}
+{% endblock %}
